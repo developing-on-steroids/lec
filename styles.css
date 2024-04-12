@@ -1,0 +1,807 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+*::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+* {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* ______________________NAV BAR STYLING___________________ */
+
+#navElement img {
+    width: 180px;
+    margin: 10px;
+    padding: 10px;
+    background-color: #ffffff;
+    z-index: 10;
+    min-height: 80px;
+}
+
+#navElement {
+    position: absolute;
+    top: 10px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 8%;
+    padding-right: 10%;
+    font-family: "Inter", sans-serif;
+}
+
+#hamburger-icon {
+    display: none;
+}
+
+#navbar-links {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+nav {
+    z-index: 2;
+}
+
+.navLinks {
+    margin-left: 50px;
+    font-size: 1.1rem;
+    margin-bottom: 35px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+#navbar-links a:hover {
+    color: #FF6E21;
+}
+
+#navbar-links hr {
+    position: absolute;
+    border: none;
+    border-top: 2px solid black;
+    width: 70%;
+    right: 8%;
+    bottom: 50px;
+}
+
+.navDropdown {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.dropdownContent {
+    display: none;
+    position: absolute;
+    top: 70px;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    font-size: 0.8rem;
+    border-top: solid 2.5px #FF6E21;
+}
+
+.navDropdown:hover .dropdownContent {
+    display: block;
+}
+
+.dropdownContent a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdownContent a:hover {
+    background-color: #ddd;
+}
+
+
+
+
+/* _________________________________________HERO SECTION___________________________________ */
+
+#landing {
+    position: relative;
+    min-height: 672px;
+    overflow: hidden;
+}
+
+#landing img {
+    width: 100vw;
+    height: auto;
+    min-width: 1200px;
+}
+
+.land_content {
+    font-family: "Alumni Sans", sans-serif;
+    position: absolute;
+    top: 30%;
+    left: 8%;
+    width: 500px;
+    overflow: hidden;
+}
+
+.land_content h4 {
+    font-size: 5rem;
+    line-height: 90%;
+}
+
+.land_content h4 span {
+    color: #F7600F;
+}
+
+.land_content h5 {
+    width: 350px;
+    font-size: 1.2rem;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    margin-top: 15px;
+}
+
+.land_content button {
+    background-color: transparent;
+    border: none;
+    color: #000000;
+    cursor: pointer;
+    width: 220px;
+    padding: 12px 0;
+    font-family: "Maven Pro", sans-serif;
+    font-size: 0.9rem;
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    font-weight: 600;
+    box-shadow: 0 0 20px 0 #0000001b;
+    border-radius: 5px;
+}
+
+.land_content button:first-of-type {
+    background-color: black;
+    color: #fff;
+    /* Changing font color to black */
+}
+
+.land_content button:last-of-type {
+    background-color: white;
+    /* Changing font color to black */
+}
+
+.land_content button::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #F7600F;
+    transition: top 0.3s;
+    /* font-weight: 900; */
+}
+
+.land_content button:first-of-type::after {
+    mix-blend-mode: lighten;
+}
+
+.land_content button:last-of-type::after {
+    mix-blend-mode: multiply;
+}
+
+.land_content button:hover::after {
+    top: 0;
+}
+
+/* _______________________Banner styling _________________ */
+
+#banner {
+    background-color: #FF6E21;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    margin-top: -5px;
+    z-index: 2;
+    font-family: "Alumni Sans", sans-serif;
+    letter-spacing: 1.5px;
+    overflow: hidden;
+}
+
+.marquee {
+    width: 100vw;
+    min-width: 1700px;
+    height: 70px;
+  /*  Make sure marquee is wide enough to fit your content  */
+    overflow: hidden;
+    position: relative;
+    float: left;
+    display: flex;
+    align-items: center;
+  }
+  
+  .marquee div {
+    display: block;
+    width: 200%;
+    position: absolute;
+    overflow: hidden;
+    animation: marquee 20s linear infinite;
+  }
+  
+  .marquee span {
+    float: left;
+    width: 50%;
+    z-index: 10;
+  }
+  
+  @keyframes marquee {
+    0% { left: 0; }
+    100% { left: -100%; }
+  }
+
+/* ________________________________PRODUCT SECTION_________________________  */
+
+#products {
+    position: relative;
+}
+
+#products h2:first-of-type {
+    font-family: "Alumni Sans", sans-serif;
+    text-align: center;
+    font-size: 3.5rem;
+    margin-top: 50px;
+}
+
+.products_scroll {
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent line breaks */
+    padding: 20px 0; /* Add padding for spacing */
+    margin: 0 150px;
+    position: relative;
+    scroll-behavior: smooth;
+    overflow-y: visible;
+}
+
+.product_card {
+    font-family: "Maven Pro", sans-serif;
+    text-transform: uppercase;
+    border: 1px solid black;
+    width: 220px;
+    margin-top: 50px;
+    margin-right: 50px;
+    display: inline-block;
+    white-space: normal; 
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.150);
+    cursor: pointer;
+    transition: transform 0.150s ease-in;
+}
+
+.product_card:hover {
+    transform: translateY(-30px);
+}
+
+.product_card h1 {
+    color: #F7600F;
+    border-bottom: 1px solid black;
+    padding: 15px 0;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.product_card img {
+    width: 100%;
+}
+
+.product_card p {
+    border-top: 1px solid black;
+    padding: 20px 0;
+    font-size: 0.9em;
+    font-weight: 600;
+    transition: background-color 0.050s ease-in;
+    position: relative;
+    overflow: hidden;
+}
+
+.product_card p::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #F5712B;
+    transition: top 0.3s;
+    mix-blend-mode: darken;
+}
+
+.product_card:hover p::after {
+    top: 0;
+}
+  
+
+.product_card p, .product_card h1 {
+    text-align: center;
+}
+
+.scroll_button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-top: 50px;
+}
+
+.scroll_button img {
+    width: 20px;
+}
+
+.left_button {
+    left: 60px;
+}
+
+.right_button {
+    right: 60px;
+}
+
+.left_button img {
+    transform: rotateY(180deg);
+}
+
+
+/* .products_scroll::before,
+.products_scroll::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 10px;
+}
+
+.products_scroll::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.2), transparent);
+  box-shadow: 10px 0 10px -5px rgba(0, 0, 0, 0.1);
+}
+
+.products_scroll::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.2), transparent);
+  box-shadow: -10px 0 10px -5px rgba(0, 0, 0, 0.1);
+} */
+
+
+/*_______________________________________________ ABOUT SECTION STYLING ____________________________________ */
+
+#about {
+    background-color: #1a1a1a;
+    padding: 50px 150px 100px 150px;
+    margin-top: 100px
+}
+
+#about h2 {
+    color: #F7600F;
+    font-family: "Alumni Sans", sans-serif;
+    padding: 10px 0;
+    font-size: 3.5rem;
+}
+
+#about p {
+    padding: 10px 100px;
+    color: #fff;
+    font-family: "Inter", sans-serif;
+    letter-spacing: 1px;
+    font-size: 1rem;
+}
+
+#about p span {
+    font-weight: 600;
+}
+
+.breakAbout {
+    margin-top: 100px;
+}
+
+.orangeLEC {
+    color: #F7600F;
+}
+
+/*_______________________________________________ NUMBERS SECTION STYLING ____________________________________ */
+
+#numbers {
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+#numbers img {
+    width: 100vw;
+    min-width: 1520px;
+    text-align: end;
+}
+
+.numbersHolderDiv {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.numbersDiv {
+    padding: 0 80px;
+    height: 97%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: background-color 0.1s ease-in;
+}
+
+.numbersDiv:hover {
+    background-color: rgba(255, 111, 33, 0.750);
+}
+
+.numbersDiv:hover h3 {
+    color: #fff;
+}
+
+.numbersDiv h3 {
+    font-size: 4.5rem;
+    font-weight: 900;
+    color: #F7600F;
+    font-family: "Odibee Sans", sans-serif;
+    text-align: center;
+    transition: color 0.2s ease-in;
+}
+
+.numbersDiv p {
+    font-family: "Inter", sans-serif;
+    text-align: center;
+    font-size: 1.1rem;
+    color: #fff;
+    width: 100px;
+}
+
+/* _____________________________Industries Section ______________________ */
+
+#serve {
+    margin-bottom: 150px;
+}
+
+#serve .serveHed {
+    font-family: "Alumni Sans", sans-serif;
+    padding: 10px 0;
+    font-size: 3.5rem;
+    text-align: center;
+    margin: 30px;
+}
+
+.industriesContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.holden div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.industriesContainer img {
+    width: 230px;
+}
+
+.industriesContainer h2 {
+    font-size: 1.3rem;
+    font-family: "Inter", sans-serif;
+    width: 210px;
+    margin: 15px 0;
+    font-weight: 700;
+}
+
+.industriesContainer p {
+    width: 200px;
+    font-family: "Inter", sans-serif;
+    padding: 13px 7px 13px 10px;
+    font-size: 0.9em;
+    color: #fff;
+}
+
+.industriesContainer .indEven p {
+    position: absolute;
+    top: 10px;
+    
+}
+
+
+.industriesContainer .indOdd p {
+    position: absolute;
+    bottom: 10px;
+}
+
+.indOdd, .indEven {
+    margin: 0 15px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+}
+
+.indEven {
+    flex-direction: column;
+}
+
+/* __________________________ Our Team Section ______________________ */
+
+#team {
+    display: flex;
+    margin: 50px 100px;
+}
+
+#team h2 {
+    font-family: "Alumni Sans", sans-serif;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+
+#team div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#team div img {
+    margin: 3px;
+    width: 350px;
+}
+
+#team div:last-of-type {
+    justify-content: flex-start;
+    margin-top: 15px;
+    font-family: "Inter", sans-serif;
+    padding: 0 50px;
+    font-size: 1.1rem;
+}
+
+#team div:last-of-type p:last-of-type {
+    margin-top: 50px;
+}
+
+/* ___________________________________ Certificates Section Styling __________________________ */
+
+#certificates {
+    background-color: #FF8D51;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 100px;
+}
+
+#certificates img {
+    width: 250px;
+    cursor: pointer;
+    margin: 30px;
+    transition: 0.3s ease-in-out;
+}
+
+#certificates img:hover {
+    width: 260px;
+    margin-top: -50px;
+}
+
+/* ________________________________________ Contact Us Section ________________________________________ */
+
+#contact {
+    margin-top: 100px;
+}
+
+#contact h2 {
+    font-size: 3.5rem;
+    font-family: "Alumni Sans", sans-serif;
+    text-align: center;
+}
+
+.map iframe {
+    width: 100vw;
+    height: 400px;
+    margin-top: 50px;
+}
+
+.contactHol {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px
+}
+
+.contCard {
+    position: relative;
+    background-color: #f2f2f2;
+    min-width: 350px;
+    max-width: 350px;
+    /* height: 170px; */
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.contCard:hover span {
+    color: #f7600f;
+}
+
+.contCard img {
+    height: 65px;
+    position: absolute;
+    top: -35px;
+    /* background-color: #000000;
+    border-radius: 100%; */
+}
+
+.contCard span {
+    font-weight: 600;
+    transition: color 0.1s ease-in;
+}
+
+.contCard p {
+    margin-top: 20px
+}
+
+/* ________________________________________ Footer Styling ________________________________________ */
+
+footer {
+    margin-top: -5px;
+    width: 100%;
+    background-color: #000000;
+    position: relative;
+}
+
+.fotHold {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer {
+    background-color: #000000;
+    margin-top: 5px;
+    position: relative;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+}
+
+.footer div:first-of-type {
+    margin-right: 50px;
+}
+
+.footer div {
+    margin: 50px 15px;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+}
+
+.footer div:first-of-type {
+    width: auto;
+}
+
+.footer img {
+    width: 300px;
+}
+
+.footer h2 {
+    color: #F7600F;
+    font-family: "Alumni Sans", sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.footer p, .footer a {
+    text-transform: uppercase;
+    color: #939393;
+    font-family: "Inter", sans-serif;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+.footer p:hover, .footer a:hover {
+    text-decoration: underline;
+}
+
+.form {
+    background-color: #232323;
+    box-shadow: -8px 0 27px 0 rgba(0, 0, 0, 0.180);
+    padding: 0 50px 50px 50px;
+    margin-top: 5px;
+    z-index: 3;
+}
+
+.form h3 {
+    color: #fff;
+    text-align: center;
+    font-family: "Alumni Sans", sans-serif;
+    font-size: 2rem;
+    margin: 20px 0;
+}
+
+.form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form form input {
+    width: 300px;
+    height: 35px;
+    padding: 0 10px;
+    margin-top: 20px;
+    font-family: "Inter", sans-serif;
+    border-radius: 4px;
+    border: 0;
+}
+
+#long {
+    height: 135px;
+}
+
+.form form input:last-of-type {
+    background-color: #FD7E3B;
+    color: #fff;
+    font-weight: 600;
+    height: 40px;
+    text-transform: uppercase;
+}
+
+.copyright p {
+    font-family: "Maven Pro", sans-serif;
+    color: #939393;
+    text-align: start;
+    position: absolute;
+    bottom: 0;
+    padding: 20px 50px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 100%;
+    border-top: #939393 2px solid;
+}
