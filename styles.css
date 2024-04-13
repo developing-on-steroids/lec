@@ -236,32 +236,37 @@ nav {
     width: 100vw;
     min-width: 1700px;
     height: 70px;
-  /*  Make sure marquee is wide enough to fit your content  */
+    /*  Make sure marquee is wide enough to fit your content  */
     overflow: hidden;
     position: relative;
     float: left;
     display: flex;
     align-items: center;
-  }
-  
-  .marquee div {
+}
+
+.marquee div {
     display: block;
     width: 200%;
     position: absolute;
     overflow: hidden;
     animation: marquee 20s linear infinite;
-  }
-  
-  .marquee span {
+}
+
+.marquee span {
     float: left;
     width: 50%;
     z-index: 10;
-  }
-  
-  @keyframes marquee {
-    0% { left: 0; }
-    100% { left: -100%; }
-  }
+}
+
+@keyframes marquee {
+    0% {
+        left: 0;
+    }
+
+    100% {
+        left: -100%;
+    }
+}
 
 /* ________________________________PRODUCT SECTION_________________________  */
 
@@ -277,9 +282,12 @@ nav {
 }
 
 .products_scroll {
-    overflow-x: auto; /* Enable horizontal scrolling */
-    white-space: nowrap; /* Prevent line breaks */
-    padding: 20px 0; /* Add padding for spacing */
+    overflow-x: auto;
+    /* Enable horizontal scrolling */
+    white-space: nowrap;
+    /* Prevent line breaks */
+    padding: 20px 0;
+    /* Add padding for spacing */
     margin: 0 150px;
     position: relative;
     scroll-behavior: smooth;
@@ -294,7 +302,7 @@ nav {
     margin-top: 50px;
     margin-right: 50px;
     display: inline-block;
-    white-space: normal; 
+    white-space: normal;
     box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.150);
     cursor: pointer;
     transition: transform 0.150s ease-in;
@@ -341,9 +349,10 @@ nav {
 .product_card:hover p::after {
     top: 0;
 }
-  
 
-.product_card p, .product_card h1 {
+
+.product_card p,
+.product_card h1 {
     text-align: center;
 }
 
@@ -541,7 +550,7 @@ nav {
 .industriesContainer .indEven p {
     position: absolute;
     top: 10px;
-    
+
 }
 
 
@@ -550,7 +559,8 @@ nav {
     bottom: 10px;
 }
 
-.indOdd, .indEven {
+.indOdd,
+.indEven {
     margin: 0 15px;
     display: flex;
     flex-direction: column-reverse;
@@ -613,13 +623,35 @@ nav {
     width: 250px;
     cursor: pointer;
     margin: 30px;
-    transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in;
 }
 
 #certificates img:hover {
-    width: 260px;
     margin-top: -50px;
 }
+
+#certificates .activeCert {
+    width: 360px;
+    z-index: 4;
+    margin-top: 0px;
+}
+
+#certificates .activeCert:hover {
+    width: 360px;
+    margin-top: inherit;
+}
+
+#certificates .backgroundCert {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 3;
+  }
 
 /* ________________________________________ Contact Us Section ________________________________________ */
 
@@ -652,7 +684,7 @@ nav {
     min-width: 350px;
     max-width: 350px;
     /* height: 170px; */
-    margin: 50px;
+    margin: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -678,7 +710,7 @@ nav {
 
 .contCard span {
     font-weight: 600;
-    transition: color 0.1s ease-in;
+    transition: color 0.3s ease-in;
 }
 
 .contCard p {
@@ -718,7 +750,7 @@ footer {
     margin: 50px 15px;
     display: flex;
     flex-direction: column;
-    width: 200px;
+    width: 150px;
 }
 
 .footer div:first-of-type {
@@ -726,25 +758,27 @@ footer {
 }
 
 .footer img {
-    width: 300px;
+    width: 250px;
 }
 
 .footer h2 {
     color: #F7600F;
     font-family: "Alumni Sans", sans-serif;
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 20px;
 }
 
-.footer p, .footer a {
+.footer p,
+.footer a {
     text-transform: uppercase;
     color: #939393;
     font-family: "Inter", sans-serif;
-    font-size: 0.9em;
+    font-size: 0.7em;
     margin-top: 10px;
 }
 
-.footer p:hover, .footer a:hover {
+.footer p:hover,
+.footer a:hover {
     text-decoration: underline;
 }
 
@@ -752,7 +786,6 @@ footer {
     background-color: #232323;
     box-shadow: -8px 0 27px 0 rgba(0, 0, 0, 0.180);
     padding: 0 50px 50px 50px;
-    margin-top: 5px;
     z-index: 3;
 }
 
@@ -804,4 +837,134 @@ footer {
     transform: translate(-50%, 0);
     width: 100%;
     border-top: #939393 2px solid;
+}
+
+@media only screen and (max-width: 1150px) {
+
+    #team {
+        margin: 30px 50px;
+    }
+
+    .contactHol {
+        flex-direction: column;
+        margin-top: 50px;
+    }
+
+    .contCard {
+        margin: 50px 20px;
+    }
+
+    .footer img {
+        position: absolute;
+        width: 200px;
+    }
+
+    .footer div {
+        margin-top: 150px;
+    }
+
+    .footer div:first-of-type {
+        margin-top: 20px;
+    }
+
+    #team div img {
+        width: 300px;
+    }
+
+    .copyright p {
+        font-size: 0.8rem;
+    }
+
+    .numbersDiv {
+        padding: 0 50px;
+    }
+
+    .industriesContainer h2 {
+        font-size: 1.2;
+        width: 170px;
+    }
+
+    .industriesContainer p {
+        font-size: 0.8;
+        width: 160px;
+    }
+
+    .industriesContainer img {
+        width: 200px;
+    }
+
+    #team div:last-of-type {
+        padding: 0 20px;
+    }
+
+}
+
+@media only screen and (max-width: 900px) {
+
+    #landing img {
+        margin-left: -250px;
+    }
+
+    #about {
+        padding: 50px 50px 100px 50px
+    }
+
+    #team {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #team div:last-of-type {
+        padding: 0 90px;
+    }
+
+    #team div:last-of-type p:last-of-type {
+        margin-top: 30px;
+    }
+
+    #team div:last-of-type p:first-of-type {
+        margin-top: 30px;
+    }
+
+    .products_scroll {
+        margin: 0 100px;
+    }
+
+    body {
+        background-color: lightblue;
+    }
+
+    .fotHold {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .footer img {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .form {
+        margin-bottom: 100px;
+    }
+
+    .copyright p {
+        text-align: center;
+    }
+
+    #certificates img {
+        width: 150px;
+    }
+
+    #certificates img:hover {
+        width: 160px;
+    }
+
+    /* #navbar-links {
+        flex-direction: column;
+        width: 0px;
+        overflow: hidden;
+        height: 83px;
+    } */
+
 }
