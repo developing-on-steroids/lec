@@ -54,3 +54,30 @@ if (target) {
     observer.observe(target);
 }
 
+
+// Get all images with class 'certificate'
+const certificateImages = document.querySelectorAll('#certificates img');
+
+// Get the pseudo-element div
+const backgroundDiv = document.querySelector('.backgroundCert');
+
+// Iterate over each image and add a click event listener
+certificateImages.forEach(image => {
+    image.addEventListener('click', function () {
+        // Remove 'activeCert' class from all images
+        certificateImages.forEach(img => img.classList.remove('activeCert'));
+        backgroundDiv.style.display = 'none';
+
+        // Add 'activeCert' class to the clicked image
+        this.classList.add('activeCert');
+
+        // Show the translucent background
+        backgroundDiv.style.display = 'block';
+    });
+});
+
+backgroundDiv.addEventListener('click', function () {
+    // Remove 'activeCert' class from all images
+    certificateImages.forEach(img => img.classList.remove('activeCert'));
+    backgroundDiv.style.display = 'none';
+})
